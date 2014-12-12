@@ -26,11 +26,11 @@ define([
 		footer: '#footer',
         notification: {
             selector: "#notification",
-            regionType: NotifyRegion
+            regionClass: NotifyRegion
         },
         dialog: {
             selector: "#dialog",
-            regionType: DialogRegion
+            regionClass: DialogRegion
         }
 	});
 
@@ -39,10 +39,13 @@ define([
 		app.footer.show(new Footer());
 	});
 
-    app.on("initialize:after", function(options){
+    app.on("start", function(options){
         if (Backbone.history){
             Backbone.history.start();
         }
+		if(Backbone.history.fragment === '') {
+			Backbone.history.navigate('/page/home');
+		}
     });
 
 	app.vent.on('menu:activate', function (activePageModel) {

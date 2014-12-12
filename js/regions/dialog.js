@@ -17,7 +17,7 @@ define([
 
         closeDialog: function(){
             this.stopListening();
-            this.close();
+            this.empty();
             this.$el.modal('hide');
         }
     });
