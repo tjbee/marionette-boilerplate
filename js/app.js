@@ -15,7 +15,7 @@ define([
 
     app.pages = new Nav([
         {title: 'Home', name: 'home', active: true},
-        {title: 'About', name: 'about'},
+        {title: 'TEST', name: 'TEST'},
         {title: 'Contact', name: 'contact'}
     ]);
     var menu = new MenuView({collection: app.pages});
